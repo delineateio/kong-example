@@ -11,95 +11,126 @@
   <h2 align="center">delineate.io</h2>
   <p align="center">portray or describe (something) precisely.</p>
 
-  <h3 align="center">[PROJECT_TITLE]</h3>
+  <h3 align="center">Kong Example</h3>
 
   <p align="center">
-    [PROJECT_DESCRIPTION]
+    Multi-node Kong API Gateway deployment playground!
     <br />
-    <a href="https://github.com/jf-delineate/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/delineateio/kong-example"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jf-delineate/repo_name">View Demo</a>
+    <a href="https://github.com/delineateio/kong-example">View Demo</a>
     ·
-    <a href="https://github.com/jf-delineate/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/delineateio/kong-example/issues">Report Bug</a>
     ·
-    <a href="https://github.com/jf-delineate/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/delineateio/kong-example/issues">Request Feature</a>
   </p>
 </p>
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [About The Project](#about-the-project)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Local Dependencies](#local-dependencies)
+  - [Local Setup](#local-setup)
+- [Usage](#usage)
+  - [Usual Lifecycle](#usual-lifecycle)
+  - [Full Target List](#full-target-list)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://delineate.io)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`jf-delineate`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+This repo provides an updated, scalable (in terms of nodes) and version pinned Docker Compose stack.
 
-### Built With
+The motivation was that te official [Kong](https://docs.konghq.com/) repo located [here](https://github.com/Kong/docker-kong) template does not seem to be maintained.  An issue has been raised [here](https://github.com/Kong/docker-kong/issues/521)
 
-* []()
+## Built With
+
+Further logos can be inserted to highlight the specific technologies used to create the solution from [here](https://github.com/Ileriayo/markdown-badges).
+
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
+### Local Dependencies
 
-This is an example of how to list things you need to use the software and how to install them.
+A number of local dependencies are required.  To review the local dependencies:
+
+* When using `MacOS` run `make requirements`
+* Otherwise run `cat Brewfile` to inspect the requirements
+
+If additional dependencies are required they should be added to `Brewfile`, for more details please review the official `brew bundle` documentation [here](https://github.com/Homebrew/homebrew-bundle).
+
+### Local Setup
+
+This repo follows the principle of minimal manual setup of the local development environment.
+
+ A `make` target has been provided for simplicity ```make init```, the `make` file can be inspected for more details.
+
+ ```shell
+# use the folder name as the repo name
+make init
+
+# explicitly pass in the repo name (e.g. my-service)
+make repo=my-service init
+ ```
+
+If at a later date repo name needs to be changed then the `make rename` target can be called.
 
 ```shell
-# installs the tooling requirements
-pip install -r requirements.txt
-# installs the git hook for pre-commit
-pre-commit install
-```
-
-### Installation
-
-```shell
-# clone the repo
-git clone https://github.com/jf-delineate/repo_name.git
+make repo=my-service rename
 ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Usual Lifecycle
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+The following commands represent a typical set of commands and lifecycle of the stack.
+
+```shell
+# creates the Kong stack
+make up-db
+
+# lists the stack containers (irrespective of status)
+make ps
+
+# tears down the Kong stack
+make down
+```
+
+### Full Target List
+
+| Target| Purpose |
+| --- | ----------- |
+| `make list` | Lists the `brew` and `pip` dependencies that will be installed. |
+| `make init` | Full initialises the local development environment.|
+| `make services` | Creates the backend services to enable the application to be run natively. |
+| `make up-dbless` | Deploys a lightweight Kong API Gateway stack. |
+| `make up-db` | Deploys a full Kong API Gateway stack including a `postgres` backend. |
+| `make ps` | Lists the primary info and status of the docker containers. |
+| `make down` | Teardown the Kong API Gateway stack. |
+| `make rename` | Only required in exceptional cased to rename the repo and update `readme` badges. |
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/jf-delineate/repo_name/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/capcodigital/kong-example/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -114,8 +145,8 @@ Contributions are what make the open source community such an amazing place to b
 
 If you would like to contribute to any Capco Digital OSS projects please read:
 
-* [Code of Conduct](https://github.com/jf-delineate/.github/blob/master/CODE_OF_CONDUCT.md)
-* [Contributing Guidelines](https://github.com/jf-delineate/.github/blob/master/CONTRIBUTING.md)
+* [Code of Conduct](https://github.com/capcodigital/.github/blob/master/CODE_OF_CONDUCT.md)
+* [Contributing Guidelines](https://github.com/capcodigital/.github/blob/master/CONTRIBUTING.md)
 
 <!-- LICENSE -->
 ## License
@@ -125,17 +156,20 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [Best README Template](https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
+* [Best README Template](https://github.com/othneildrew/Best-README-Template)
+* [Markdown Badges](https://github.com/Ileriayo/markdown-badges)
+* [DocToc](https://github.com/thlorenz/doctoc)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/jf-delineate/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/jf-delineate/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/jf-delineate/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/jf-delineate/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/jf-delineate/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/jf-delineate/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/jf-delineate/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/jf-delineate/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/jf-delineate/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/jf-delineate/repo_name/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/capcodigital/kong-example.svg?style=for-the-badge
+[contributors-url]: https://github.com/capcodigital/kong-example/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/capcodigital/kong-example.svg?style=for-the-badge
+[forks-url]: https://github.com/capcodigital/kong-example/network/members
+[stars-shield]: https://img.shields.io/github/stars/capcodigital/kong-example.svg?style=for-the-badge
+[stars-url]: https://github.com/capcodigital/kong-example/stargazers
+[issues-shield]: https://img.shields.io/github/issues/capcodigital/kong-example.svg?style=for-the-badge
+[issues-url]: https://github.com/capcodigital/kong-example/issues
+[license-shield]: https://img.shields.io/github/license/capcodigital/kong-example.svg?style=for-the-badge
+[license-url]: https://github.com/capcodigital/kong-example/blob/master/LICENSE
+[product-screenshot]: images/screenshot.png

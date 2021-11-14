@@ -130,7 +130,7 @@ make down
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/capcodigital/kong-example/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/delineateio/kong-example/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -145,8 +145,8 @@ Contributions are what make the open source community such an amazing place to b
 
 If you would like to contribute to any Capco Digital OSS projects please read:
 
-* [Code of Conduct](https://github.com/capcodigital/.github/blob/master/CODE_OF_CONDUCT.md)
-* [Contributing Guidelines](https://github.com/capcodigital/.github/blob/master/CONTRIBUTING.md)
+* [Code of Conduct](https://github.com/delineateio/.github/blob/master/CODE_OF_CONDUCT.md)
+* [Contributing Guidelines](https://github.com/delineateio/.github/blob/master/CONTRIBUTING.md)
 
 <!-- LICENSE -->
 ## License
@@ -162,14 +162,14 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/capcodigital/kong-example.svg?style=for-the-badge
-[contributors-url]: https://github.com/capcodigital/kong-example/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/capcodigital/kong-example.svg?style=for-the-badge
-[forks-url]: https://github.com/capcodigital/kong-example/network/members
-[stars-shield]: https://img.shields.io/github/stars/capcodigital/kong-example.svg?style=for-the-badge
-[stars-url]: https://github.com/capcodigital/kong-example/stargazers
-[issues-shield]: https://img.shields.io/github/issues/capcodigital/kong-example.svg?style=for-the-badge
-[issues-url]: https://github.com/capcodigital/kong-example/issues
-[license-shield]: https://img.shields.io/github/license/capcodigital/kong-example.svg?style=for-the-badge
-[license-url]: https://github.com/capcodigital/kong-example/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/delineateio/kong-example.svg?style=for-the-badge
+[contributors-url]: https://github.com/delineateio/kong-example/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/delineateio/kong-example.svg?style=for-the-badge
+[forks-url]: https://github.com/delineateio/kong-example/network/members
+[stars-shield]: https://img.shields.io/github/stars/delineateio/kong-example.svg?style=for-the-badge
+[stars-url]: https://github.com/delineateio/kong-example/stargazers
+[issues-shield]: https://img.shields.io/github/issues/delineateio/kong-example.svg?style=for-the-badge
+[issues-url]: https://github.com/delineateio/kong-example/issues
+[license-shield]: https://img.shields.io/github/license/delineateio/kong-example.svg?style=for-the-badge
+[license-url]: https://github.com/delineateio/kong-example/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png

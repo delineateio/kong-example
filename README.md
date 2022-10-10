@@ -172,4 +172,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [issues-url]: https://github.com/delineateio/kong-example/issues
 [license-shield]: https://img.shields.io/github/license/delineateio/kong-example.svg?style=for-the-badge
 [license-url]: https://github.com/delineateio/kong-example/blob/master/LICENSE
-[product-screenshot]: images/screenshot.png

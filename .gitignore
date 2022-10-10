@@ -1,6 +1,6 @@
+.DS_Store
 .terraform/
 .vagrant/
-.vscode/
 
 *.env
 *.todo

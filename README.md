@@ -50,7 +50,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://delineate.io)
+![Product Name Screen Shot](images/screenshot.png)
 
 This repo provides an updated, scalable (in terms of nodes) and version pinned Docker Compose stack.
 
